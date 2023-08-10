@@ -1,0 +1,17 @@
+---
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import MyButton from '../components/MyButton';
+import NavMenu from '../components/NavMenu.astro';
+---
+<html lang="en">
+	<head>
+		<Header title="Welcome to Astro Blog" />
+	</head>
+	<body>
+		<NavMenu />
+		<slot />
+		<MyButton client:load />
+        <Footer />
+    </body>
+</html>

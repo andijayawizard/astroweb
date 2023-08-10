@@ -1,0 +1,40 @@
+<nav class="flex flex-wrap items-center justify-between w-full p-1 md:p-3 text-lg">
+  <div class="block md:hidden">
+    <svg id="navButton" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 cursor-pointer md:hidden block" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+  </div>
+  <div id="navMenu" class="hidden w-full md:flex md:items-center md:w-auto">
+    <ul class="text-base md:flex md:justify-between">
+      <li>
+        <a href="/" class="block py-2 md:p-4">
+          Home
+        </a>
+      </li>
+      <li>
+        <a href="/about-us" class="block py-2 md:p-4">
+          About Us
+        </a>
+      </li>
+      <li>
+        <a href="/products" class="block py-2 md:p-4">
+          Products
+        </a>
+      </li>
+      <li>
+        <a href="/blog" class="block py-2 md:p-4">
+          Blog
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<script>
+  const navButton = document.querySelector('#navButton');
+  const navMenu = document.querySelector('#navMenu');
+
+  navButton.addEventListener('click', () => {
+      navMenu.classList.toggle('hidden');
+  });
+</script>

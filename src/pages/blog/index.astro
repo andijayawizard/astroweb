@@ -1,0 +1,8 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import ContentList from '../../components/ContentList.astro'
+const blogPosts=await Astro.glob('./*.md')
+---
+<BaseLayout title="Blog">
+    <ContentList listTitle="archive" listContent={blogPosts} />
+</BaseLayout>
