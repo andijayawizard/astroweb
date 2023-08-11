@@ -1,0 +1,17 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const title='Articles'
+const pengantar='artikel menarik untuk dibaca'
+// const data=await fetch('https://abdullahfahmi.com/api/api.php/records/blog').then((response)=>response.json())
+// console.log(data);
+
+// const data=await response.json()
+// const rec=data.records[0]
+---
+
+<BaseLayout>
+    <div class="w-full bg-blue-100 p-4 text-center">
+        <h1>{title}</h1>
+        <h2>{pengantar}</h2>
+    </div>
+</BaseLayout>

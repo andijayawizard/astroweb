@@ -1,0 +1,25 @@
+---
+export interface Props{
+    post:any
+}
+const {post}=Astro.props as Props
+const slug='posts/'+post.slug
+---
+<div>
+    <img src="" alt="">
+    <div>
+        <a href="">
+            <h5>title</h5>
+        </a>
+        <p>desc</p>
+        <div>
+            <div>
+                <div>
+                    <img src="" alt="">
+                </div>
+                <p>author</p>
+            </div>
+            <a href="">read more</a>
+        </div>
+    </div>
+</div>
