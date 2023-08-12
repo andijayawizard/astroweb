@@ -1,0 +1,16 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+export function getStaticPaths(){
+    return[
+        {params: {lang: 'en', version: 'v1'}},
+        {params: {lang: 'fr', version: 'v2'}},
+    ]
+}
+const {lang, version}=Astro.params
+const title=`${lang}-${version}`
+---
+<BaseLayout title={title}>
+    <div class="w-full">
+        <div class="p-4 bg-green-100">{lang} {version}</div>
+    </div>
+</BaseLayout>

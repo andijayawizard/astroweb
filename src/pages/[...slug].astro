@@ -1,0 +1,51 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Card from '../components/Card.astro'
+export async function getStaticPaths() {
+    const pages=[
+        {
+            slug: undefined,
+            title: 'astro store',
+            content: 'welcome to astro store'
+        },
+        {
+            slug: 'about-us',
+            title: 'about astro',
+            content: 'astro is good for you'
+        },
+        {
+            slug: 'contact-us',
+            title: 'contact us',
+            content: 'for more info, drop your any question here'
+        },
+        {
+            slug: 'products',
+            title: 'astro products',
+            content: 'we have lots of products for you'
+        },
+        {
+            slug: 'products/astro-handbook',
+            title: 'the ultimate astro handbook',
+            content: 'if you want to learn more about astro, you must read this book'
+        },
+    ]
+    return pages.map(({slug, title, content})=>{
+        return{
+            params: {slug},
+            props: {title, content}
+        }
+    })
+}
+const {title, content}=Astro.props
+---
+<BaseLayout title={title}>
+    <div class="w-full">
+        <div class="p-4 bg-green-100">
+            <p>{title}</p>
+            <p>{content}</p>
+        </div>
+        <div>
+            <Card />
+        </div>
+    </div>
+</BaseLayout>

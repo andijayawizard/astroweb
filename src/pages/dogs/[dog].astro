@@ -1,0 +1,14 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+export function getStaticPaths(){
+    return[
+        {params: {dog: 'anthony'}},
+        {params: {dog: 'brandon'}},
+        {params: {dog: 'charlie'}},
+    ]
+}
+const {dog}=Astro.params
+---
+<BaseLayout title={dog}>
+    <div class="w-full p-4 bg-red-100">good dog, {dog}</div>
+</BaseLayout>
