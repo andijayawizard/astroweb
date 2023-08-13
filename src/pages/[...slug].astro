@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Card from '../components/Card.astro'
+import Products from "../components/Products.astro";
 export async function getStaticPaths() {
     const pages=[
         {
@@ -45,7 +46,8 @@ const {title, content}=Astro.props
             <p>{content}</p>
         </div>
         <div class='p-4 bg-green-200'>
-            <Card />
+            <!-- <Card /> -->
+            <Products />
         </div>
     </div>
 </BaseLayout>

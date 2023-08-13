@@ -1,4 +1,5 @@
 ---
+import Products from "../components/Products.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 const title='Articles'
 const pengantar='artikel menarik untuk dibaca'
@@ -13,5 +14,6 @@ const pengantar='artikel menarik untuk dibaca'
     <div class="w-full bg-blue-100 p-4 text-center">
         <h1>{title}</h1>
         <h2>{pengantar}</h2>
+        <Products />
     </div>
 </BaseLayout>

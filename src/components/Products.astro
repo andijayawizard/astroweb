@@ -1,0 +1,14 @@
+---
+const res=await fetch('https://fakestoreapi.com/products')
+const data=await res.json()
+// const randomData=data[1]
+// console.log(randomData);
+---
+<div class="text-left">
+    <!-- {randomData.title} -->
+    content of products
+    <ul>
+        {data.map((item:any)=>{
+            <li>{item.title}</li>
+        })}
+    </ul></div>
