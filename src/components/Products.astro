@@ -5,10 +5,9 @@ const data=await res.json()
 // console.log(randomData);
 ---
 <div class="text-left">
-    <!-- {randomData.title} -->
-    content of products
+    <h1 class="text-lg">content of products</h1>
     <ul>
-        {data.map((item:any)=>{
+        {data.map((item:any)=>(
             <li>{item.title}</li>
-        })}
+        ))}
     </ul></div>
