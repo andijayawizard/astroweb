@@ -1,0 +1,11 @@
+---
+const url=`https://abdullahfahmi.com`
+const data=await fetch(`${url}/api/api.php/records/menuweb/2`, {
+    headers: {
+        'x-api-key': '6c793695171e793d7d0080ad7700a2bc50256912cef2492c201e8ecc54b24ab5'
+    }
+}).then((resp)=>resp.json())
+---
+<div>
+    {data.ktrg}
+</div>
