@@ -1,0 +1,26 @@
+---
+const url=`https://abdullahfahmi.com`
+const currentPage=Astro.url.pathname
+const tangkap=await fetch(`${url}/api/api.php/records/blog?order=id,desc&size=6`, {
+    headers: {
+        'x-api-key': '6c793695171e793d7d0080ad7700a2bc50256912cef2492c201e8ecc54b24ab5'
+    }
+}).then((resp)=>resp.json())
+// const data=await response.json()
+const data=tangkap.records
+---
+{data.map((item:any)=>(
+    <figure class="w-1/4 rounded-lg bg-slate-100 overflow-hidden shadow-lg mb-4 mr-4">
+        <img src={`${url}/assets/uploads/images/blog/${item.acak}-1.jpg`} alt={item.nama}>
+        <div class="p-4">
+            <blockquote>
+                <p class="font-bold text-xl">
+                    {item.nama}
+                </p>
+            </blockquote>
+            <figcaption>
+                <div class="">{item.rgks}</div>
+            </figcaption>
+        </div>
+    </figure>
+))}

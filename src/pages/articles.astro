@@ -1,9 +1,11 @@
 ---
-import Products from "../components/Products.astro";
+import ArticlesList from "../components/ArticlesList.astro";
+import User from "../components/User.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 const title='Articles'
 const pengantar='artikel menarik untuk dibaca'
-// const data=await fetch('https://abdullahfahmi.com/api/api.php/records/blog').then((response)=>response.json())
+const currentPath=Astro.url.pathname
+// console.log(currentPath)
 // console.log(data);
 
 // const data=await response.json()
@@ -14,6 +16,8 @@ const pengantar='artikel menarik untuk dibaca'
     <div class="w-full bg-blue-100 p-4 text-center">
         <h1>{title}</h1>
         <h2>{pengantar}</h2>
-        <Products />
+        {
+        currentPath==='/articles' ? <ArticlesList /> : <User />
+        }
     </div>
 </BaseLayout>

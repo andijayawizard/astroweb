@@ -2,12 +2,29 @@
 const res=await fetch('https://fakestoreapi.com/products')
 const data=await res.json()
 // const randomData=data[1]
-// console.log(randomData);
+// console.log(data);
 ---
 <div class="text-left">
     <h1 class="text-lg">content of products</h1>
-    <ul>
+    <div class="">
+        {data.map((item:any)=>(
+            <figure class="bg-slate-100 rounded-xl p-8 md:flex md:p-0 dark:bg-slate-800">
+                <img src={item.image} alt={item.title} class="w-24 h-24 md:w-48 md:h-auto md:rounded-none rounded-full mx-auto" width="320" height="320">
+                <div class="pt-6 md:p-8 text-center md:text-left space-y-4">
+                    <blockquote>
+                        <p class="text-lg font-medium">{item.category}</p>
+                    </blockquote>
+                    <figcaption class="font-medium">
+                        <div class="text-sky-500 dark:text-sky-400">{item.title}</div>
+                        <div class="text-slate-700 dark:text-slate-500">{item.price}</div>
+                    </figcaption>
+                </div>
+            </figure>
+            ))}
+            </div>
+    <!-- <ul>
         {data.map((item:any)=>(
             <li>{item.title}</li>
         ))}
-    </ul></div>
+    </ul> -->
+</div>

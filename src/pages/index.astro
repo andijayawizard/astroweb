@@ -1,5 +1,6 @@
 ---
 // import SiteLayout from '../layouts/SiteLayout.astro'
+import ArticlesList from '../components/ArticlesList.astro';
 import User from '../components/User.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 const title='Welcome to Astro Blog'
@@ -21,6 +22,9 @@ const desc='this is where you begin'
         <div class="px-4 py-4 bg-blue-400">
             <h1>Blog</h1>
             <p>read our blog</p>
+            <div class="flex">
+                <ArticlesList />
+            </div>
             <a href="/blog">read more</a>
         </div>
         <User />
