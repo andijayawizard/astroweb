@@ -16,8 +16,10 @@ const currentPath=Astro.url.pathname
     <div class="w-full bg-blue-100 p-4 text-center">
         <h1>{title}</h1>
         <h2>{pengantar}</h2>
-        {
-        currentPath==='/articles' ? <ArticlesList /> : <User />
-        }
+        <div class="flex flex-wrap">
+            {
+                currentPath==='/articles' ? <ArticlesList /> : <User />
+            }        
+        </div>
     </div>
 </BaseLayout>
